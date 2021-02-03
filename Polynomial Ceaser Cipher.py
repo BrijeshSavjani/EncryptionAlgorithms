@@ -29,4 +29,4 @@ n = 0
 for char in unecncrypted:
         n += 1
         encrypted_text.append(ord(char) + getIncrease(n))
-print(text)
+print(encrypted_text)
