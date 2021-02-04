@@ -1,7 +1,7 @@
 numerical_values = []
 decrypted_text = ""
 text = input("Please enter text>")
-encrypted = text.split(',')
+encrypted = list(text)
 invalid = True
 x = 0
 coefficients = []
@@ -26,6 +26,6 @@ x = password[0]
 n = 0
 for char in encrypted:
         n += 1
-        decrypted_text += chr(int(char) - getIncrease(n))
+        decrypted_text += chr(ord(char) - getIncrease(n))
 print(decrypted_text)
 

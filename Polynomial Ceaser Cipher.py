@@ -1,5 +1,5 @@
 numerical_values = []
-encrypted_text = []
+encrypted_text = ""
 text = input("Please enter text>")
 unecncrypted = list(text)
 invalid = True
@@ -28,5 +28,5 @@ x = password[0]
 n = 0
 for char in unecncrypted:
         n += 1
-        encrypted_text.append(ord(char) + getIncrease(n))
+        encrypted_text += chr((ord(char) + getIncrease(n)))
 print(encrypted_text)
