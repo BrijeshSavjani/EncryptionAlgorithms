@@ -1,11 +1,10 @@
 numerical_values = []
 decrypted_text = ""
 text = input("Please enter text>")
-encrypted = list(text)
+encrypted = text.split(',')
 invalid = True
 x = 0
 coefficients = []
-
 def getIncrease(n):
     a = 0
     i = 0
@@ -16,7 +15,10 @@ def getIncrease(n):
 
 while(invalid):
     invalid = False
-    password = input("Pincode (atleast 4 digits)>")
+    password_input = input("Pincode (atleast 4 digits)>")
+    password = password_input.split(",")
+    if len(password) == 1: 
+        password = list(password_input)
     if len(password) != int(password[0]) + 2:
         print("Pincode must be one digit longer then the first number")
         invalid = True
@@ -26,6 +28,7 @@ x = password[0]
 n = 0
 for char in encrypted:
         n += 1
-        decrypted_text += chr(ord(char) - getIncrease(n))
+        decrypted_text += chr(int(char) - getIncrease(n))
 print(decrypted_text)
+
 
