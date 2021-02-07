@@ -4,14 +4,13 @@ encrypted_text = ""
 text = input("Please enter text>")
 unecncrypted = list(text)
 invalid = True
-x = 0
 coefficients = []
 
 def getIncrease(n):
     a = 0
     i = 0
     for coefficient in coefficients:
-        a+= (int(coefficient)) * (int(n)**(int(x)-int(i)))
+        a+= (float(coefficient)) * (int(n)**(int(password[0])-int(i)))
         i+=1
     return a
 def SplitIntoChunks(master_text,chunk_size):
