@@ -1,9 +1,11 @@
 text = input("Please enter the text to find max block legnth>")
-block_legnth = len(text)
+max_block_legnth = len(text)
 coefficients = []
 max_x = 0
 invalid = True
-
+for x in text:
+    if ord(x) > max_x:
+        max_x = ord(x)
 while(invalid):
     invalid = False
     password_input= input("Pincode (atleast 4 digits)>")
@@ -21,14 +23,20 @@ def getIncrease(n):
         a+= (float(coefficient)) * (int(n)**(int(password[0])-int(i)))
         i+=1
     return a
-
-for x in text:
-    if ord(x) > max_x: 
-        max_x = ord(x)
-overflow = True
-while overflow:
-    if max_x + getIncrease(block_legnth) <= 1114111:
-        overflow = False
-    else:
-        block_legnth -= 1
-print("Maximum Block Legnth")
+def getMaxBlockLegnth(block_legnth):
+    overflow = True
+    while overflow:
+        if max_x + getIncrease(block_legnth) <= 1114111:
+            overflow = False
+        else:
+            block_legnth -= 1
+    return block_legnth
+max_block_legnth = getMaxBlockLegnth(max_block_legnth)
+scale = 0
+while max_block_legnth < 2:
+    max_block_legnth = len(text)
+    for coefficient in range(0,len(coefficients)):
+        coefficients[coefficient] = float(coefficients[coefficient])/10
+    max_block_legnth = getMaxBlockLegnth(max_block_legnth)
+    scale +=1
+print("Maximum Block Legnth" , max_block_legnth,"Scale", scale)
