@@ -11,5 +11,7 @@ The polynomial ceaser cipher is an idea that I had to make the ceaser ciphers of
 <h3>Using the program</h3>
 <h4>Setting the polynomial</h4>
 The polynomial is set using a 'keycode'. This can be entered in the form "nabcd..." (where a,b,c,d.. are all single digit integers). Or in the form n,a,b,c,d.... (where a,b,c,d... can be any naturual number). n allways has to be a positive integers. n is the order of the polynomial this means n also has to be two larger then the legnth of the key so that there are enough coefficients. Below is how the 'keycode' is used to create the offset.</br>
-<img src = "https://render.githubusercontent.com/render/math?math=Offset%20=%20LetterIndex%20%2b%20(a^n%20%2b%20%20b^{n%20-1}%20%2b%20c%20^{n%20-2}%20....%20%2b%20FinalNumber^{n-n})"/>
+<img src = "https://render.githubusercontent.com/render/math?math=Offset%20=%20LetterIndex%20%2b%20(an^x%20%2b%20%20bn^{x%20-1}%20%2b%20cn%20^{x%20-2}%20....%20%2b%20FinalNumber*n^{x-x})"/>
+Where x is the order of the polynomial and n is it's index in the string
 <h4>Block Legnth</h1>
+Since the offset value can get quite large with n (espescially as the order of the polynomial increases) I have included a block legnth and a program to calculate the maximum block legnth. This works by finding the maximum possible block legnth that can exist without an overflow. It works by dividing the string into blocks of a fixed legnth and setting n This also increases security as the hackers won't know the block legnth (as this can be set custom) and won't know the maximum possible without the password.
