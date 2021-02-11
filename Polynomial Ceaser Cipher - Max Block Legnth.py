@@ -32,11 +32,4 @@ def getMaxBlockLegnth(block_legnth):
             block_legnth -= 1
     return block_legnth
 max_block_legnth = getMaxBlockLegnth(max_block_legnth)
-scale = 0
-while max_block_legnth < 2:
-    max_block_legnth = len(text)
-    for coefficient in range(0,len(coefficients)):
-        coefficients[coefficient] = float(coefficients[coefficient])/10
-    max_block_legnth = getMaxBlockLegnth(max_block_legnth)
-    scale +=1
-print("Maximum Block Legnth" , max_block_legnth,"Scale", scale)
+print("Maximum Block Legnth" , max_block_legnth)
