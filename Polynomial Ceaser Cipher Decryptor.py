@@ -32,6 +32,10 @@ def SplitIntoChunks(master_text,chunk_size):
         Chunk = ""
     return Chunks
 
+def returnIncrease(a,max_x):
+    while a > max_x:
+        a = a - max_x
+    return a
 
 while(invalid):
     invalid = False
@@ -55,7 +59,7 @@ for chunk in chunks:
     n = 0
     for char in chunk:
             n += 1
-            decrypted_text += chr(ord(char) -  int(getIncrease(n)))
+            decrypted_text += chr(ord(char) -  int(returnIncrease(getIncrease(n),(1056767))))
 print(decrypted_text)
 
 

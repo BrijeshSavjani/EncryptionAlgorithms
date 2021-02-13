@@ -54,11 +54,13 @@ for number in password[1:]:
 chunks = SplitIntoChunks(text,block_legnth)
 try: chunks.remove("")
 except: pass
+k = 0
 for chunk in chunks:
+    k+= 1
+    print(k,"/", len(chunks))
     n = 0
     for char in chunk:
             n += 1
-            encrypted_text += chr(ord(char) + int(returnIncrease(getIncrease(n),(1114111 - ord(char)))))
+            encrypted_text += chr(ord(char) + int(returnIncrease(getIncrease(n),(1056767))))
        
-    
 print(encrypted_text)
