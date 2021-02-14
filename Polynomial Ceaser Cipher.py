@@ -1,8 +1,6 @@
 import math
-numerical_values = []
 encrypted_text = ""
 text = input("Please enter text>")
-unecncrypted = list(text)
 invalid = True
 coefficients = []
 
